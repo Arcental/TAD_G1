@@ -55,8 +55,6 @@ if (g_keyDirectionPressed)
     if (g_keyDirection == 180) direction = 180;
     if (g_keyDirection == 270) direction = 270;
 
-    // Or simply... 
-    // direction = g_keyDirection;
 }
 
 if (g_keyDirectionReleased)
