@@ -1,0 +1,66 @@
+      //Create a "Create" event and add an "execute code"
+globalvar
+g_keyDirection,
+g_keyDirectionPressed,
+g_keyDirectionReleased;
+
+g_keyDirection = -1;
+g_keyDirectionPressed = false;
+g_keyDirectionReleased = false;
+
+      //Create a "Begin Step" event and add an "execute code"
+g_keyDirectionPressed = false;
+g_keyDirectionReleased = false;
+
+if(keyboard_check_pressed(vk_up))
+{
+    g_keyDirection = 90;
+    g_keyDirectionPressed = true;
+}
+else if(keyboard_check_pressed(vk_right))
+{
+    g_keyDirection = 0;
+    g_keyDirectionPressed = true;
+}
+else if(keyboard_check_pressed(vk_down))
+{
+    g_keyDirection = 270;
+    g_keyDirectionPressed = true;
+}
+else if(keyboard_check_pressed(vk_left))
+{
+    g_keyDirection = 180;
+    g_keyDirectionPressed = true;
+}
+
+if(keyboard_check_released(vk_up) or keyboard_check_released(vk_right) or keyboard_check_released(vk_down) or keyboard_check_released(vk_left))
+{
+    g_keyDirectionReleased = true;
+    g_keyDirection = -1;
+    
+    if(keyboard_check(vk_right)) g_keyDirection = 0;
+    else if(keyboard_check(vk_up)) g_keyDirection = 90;
+    else if(keyboard_check(vk_down)) g_keyDirection = 270;
+    else if(keyboard_check(vk_left)) g_keyDirection = 180;
+}
+
+      //Create a "Step" event and add an "execute code"
+if (g_keyDirectionPressed)
+{
+    speed = 4;
+    if (g_keyDirection == 0)   direction = 0;
+    if (g_keyDirection == 90)  direction = 90;
+    if (g_keyDirection == 180) direction = 180;
+    if (g_keyDirection == 270) direction = 270;
+
+    // Or simply... 
+    // direction = g_keyDirection;
+}
+
+if (g_keyDirectionReleased)
+{
+    if (g_keyDirection == -1)  speed = 0;
+    else if (g_keyDirection == 0)   direction = 0;
+    else if (g_keyDirection == 90)  direction = 90;
+    else if (g_keyDirection == 180) direction = 180;
+    else if (g_keyDirection == 270) direction = 270;
