@@ -1,1 +1,19 @@
-
+// Move up
+if(keyboard_check(ord(vk_up)))
+{
+  i = 0;
+  done = 0;
+  speed = 3;
+  while(done != 1)
+  {
+    if(keyboard_check(ord(vk_up)) && i != (upspritemax))
+    {
+      sprite_assign(i, (spriteanimation);
+      i = i + 1;
+    }
+    else
+    {
+      done = 1;
+    }
+  }
+}
