@@ -21,10 +21,15 @@
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_exit_zone</object>
+    <object>objects\obj_menu_select</object>
+    <object>objects\obj_fade</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test1</room>
     <room>rooms\rm_test2</room>
+    <rooms name="Menu">
+      <room>rooms\rm_menu_main</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
